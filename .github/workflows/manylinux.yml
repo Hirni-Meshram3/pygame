@@ -74,7 +74,7 @@ jobs:
             source .env/bin/activate && \
             export PYTHON_EXE=python3 && \
             pwd && \
-            source buildconfig/ci/travis/build_test_sdist.sh && \
+            source /ws/buildconfig/ci/travis/build_test_sdist.sh && \
             python -m pip install twine && \
             python -m twine upload dist/*.tar.gz && \
             deactivate'
