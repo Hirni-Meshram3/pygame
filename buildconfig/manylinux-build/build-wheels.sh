@@ -23,23 +23,23 @@ fi
 # -03 is full optimization on.
 export CFLAGS="-g0 -O3"
 
-ls -la /io
+ls -la /ws
 
 # Compile wheels
 for PYVER in $SUPPORTED_PYTHONS; do
-    rm -rf /io/Setup /io/build/
+    rm -rf /ws/Setup /ws/build/
     PYBIN="/opt/python/${PYVER}/bin"
     PYTHON="/opt/python/${PYVER}/bin/python"
 	if [ ! -f ${PYBIN}/python ]; then
 	    PYTHON="/opt/python/${PYVER}/bin/pypy"
 	fi
 
-    ${PYTHON} -m pip wheel --global-option="build_ext" --global-option="-j4" -vvv /io/ -w wheelhouse/
+    ${PYTHON} -m pip wheel --global-option="build_ext" --global-option="-j4" -vvv /ws/ -w wheelhouse/
 done
 
 # Bundle external shared libraries into the wheels
 for whl in wheelhouse/*.whl; do
-    auditwheel repair $whl -w /io/buildconfig/manylinux-build/wheelhouse/
+    auditwheel repair $whl -w /ws/buildconfig/manylinux-build/wheelhouse/
 done
 
 # Dummy options for headless testing
