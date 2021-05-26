@@ -75,7 +75,7 @@ jobs:
             yum install -y python3 && \
             export PYTHON_EXE=python3 && \
             pwd && \
-            source /io/buildconfig/manylinux-build/build-wheels.sh
+            source buildconfig/manylinux-build/build-wheels.sh
             #source /ws/buildconfig/ci/travis/build_test_sdist.sh && \
             python -m pip install twine && \
             python -m twine upload dist/*.tar.gz && \
