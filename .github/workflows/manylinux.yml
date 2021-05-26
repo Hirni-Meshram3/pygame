@@ -77,7 +77,7 @@ jobs:
             pwd && \
             sudo yum install -y epel-release && \
             sudo yum-config-manager --enable epel && \
-            sudo yum install -y SDL2-devel freetype-devel openjpeg-devel SDL2_mixer-devel portmidi-devel fontpackages-devel SDL2_image-devel && \
+            sudo yum install -y SDL2-devel freetype-devel turbojpeg-devel SDL2_mixer-devel portmidi-devel fontpackages-filesystem SDL2_image-devel && \
             source buildconfig/manylinux-build/build-wheels.sh
             #source /ws/buildconfig/ci/travis/build_test_sdist.sh && \
             python -m pip install twine && \
