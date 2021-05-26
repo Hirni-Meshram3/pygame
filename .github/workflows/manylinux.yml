@@ -72,6 +72,7 @@ jobs:
             ${{ env.img }} \
             bash -exc '${{ env.py }} -m pip install virtualenv && ${{ env.py }} -m venv .env && \
             source .env/bin/activate && \
+            export PYTHON_EXE=python3 && \
             source buildconfig/ci/travis/build_test_sdist.sh && \
             python -m pip install twine && \
             python -m twine upload dist/*.tar.gz && \
