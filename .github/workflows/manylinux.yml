@@ -53,7 +53,7 @@ jobs:
     name: "Build aarch64 wheel"
     strategy:
       matrix:
-        pyver: [cp36-cp36m]
+        pyver: [cp39-cp39]
       fail-fast: false
     runs-on: ubuntu-latest
     env:
