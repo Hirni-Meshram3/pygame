@@ -78,7 +78,7 @@ jobs:
             sudo yum-config-manager --enable epel && \
             sudo yum install -y dnf && \
             sudo yum install -y SDL2-devel freetype-devel libjpeg-turbo SDL2_mixer-devel portmidi-devel SDL2_ttf-devel SDL2_image-devel && \
-            sudo dnf install -y libjpeg-turbo-devel && \
+            sudo dnf install -y libjpeg-turbo-devel libvorbis && \
             source buildconfig/manylinux-build/build-wheels.sh
             python -m pip install twine && \
             python -m twine upload dist/*.tar.gz && \
