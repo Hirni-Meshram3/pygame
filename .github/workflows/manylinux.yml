@@ -80,7 +80,7 @@ jobs:
             sudo yum install -y SDL2-devel freetype-devel libjpeg-turbo SDL2_mixer-devel portmidi-devel SDL2_ttf-devel SDL2_image-devel && \
             sudo dnf install -y libjpeg-turbo-devel libvorbis && \
             cd buildconfig/manylinux-build && \
-            source buildconfig/manylinux-build/build-wheels.sh && \
+            source build-wheels.sh && \
             cd ../.. && \
             mkdir -p dist/ && \
             cp buildconfig/manylinux-build/wheelhouse/*.whl dist/ && \
