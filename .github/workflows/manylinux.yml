@@ -73,10 +73,10 @@ jobs:
       run: |
             docker run --rm -v ${{ github.workspace }}:/io:rw --workdir=/io \
             ${{ env.img }} \
-            bash -exc 'yum –y install python-pip && \
+            bash -exc 'yum install -y sudo && \
+            sudo yum –y install python-pip && \
             python -m pip install virtualenv && python -m venv .env && \
             source .env/bin/activate && \
-            yum install -y sudo && \
             export PYTHON_EXE=python3 && \
             pwd && \
             sudo yum install -y epel-release && \
