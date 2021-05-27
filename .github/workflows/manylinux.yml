@@ -72,9 +72,8 @@ jobs:
             ${{ env.img }} \
             bash -exc 'yum install -y sudo && \
             export PYTHON_EXE=python3 && \
-            sudo yum install -y epel-release && \
+            sudo yum install -y epel-release dnf && \
             sudo yum-config-manager --enable epel && \
-            sudo yum install -y dnf && \
             sudo yum install -y SDL2-devel freetype-devel libjpeg-turbo SDL2_mixer-devel portmidi-devel SDL2_ttf-devel SDL2_image-devel && \
             sudo dnf install -y libjpeg-turbo-devel libvorbis && \
             cd buildconfig/manylinux-build && \
