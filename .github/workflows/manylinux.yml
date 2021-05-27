@@ -52,12 +52,9 @@ jobs:
   build-aarch64:
     name: "Build aarch64 wheel"
     strategy:
-      #matrix:
-        #pyver: [cp39-cp39]
       fail-fast: false
     runs-on: ubuntu-latest
     env:
-      #py: /opt/python/${{ matrix.pyver }}/bin/python
       img: quay.io/pypa/manylinux2014_aarch64
     steps:
     - name: Checkout
@@ -74,11 +71,7 @@ jobs:
             docker run --rm -v ${{ github.workspace }}:/io:rw --workdir=/io \
             ${{ env.img }} \
             bash -exc 'yum install -y sudo && \
-            #sudo yum –y install python-pip && \
-            #python -m pip install virtualenv && python -m venv .env && \
-            #source .env/bin/activate && \
             export PYTHON_EXE=python3 && \
-            pwd && \
             sudo yum install -y epel-release && \
             sudo yum-config-manager --enable epel && \
             sudo yum install -y dnf && \
