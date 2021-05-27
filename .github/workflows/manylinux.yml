@@ -73,7 +73,8 @@ jobs:
       run: |
             docker run --rm -v ${{ github.workspace }}:/ws:rw --workdir=/ws \
             ${{ env.img }} \
-            bash -exc 'python -m pip install virtualenv && python -m venv .env && \
+            bash -exc 'python -m pip install --upgrade pip && \
+            python -m pip install virtualenv && python -m venv .env && \
             source .env/bin/activate && \
             yum install -y sudo && \
             export PYTHON_EXE=python3 && \
