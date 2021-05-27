@@ -23,23 +23,23 @@ fi
 # -03 is full optimization on.
 export CFLAGS="-g0 -O3"
 
-ls -la /ws
+ls -la /io
 
 # Compile wheels
 for PYVER in $SUPPORTED_PYTHONS; do
-    rm -rf /ws/Setup /ws/build/
+    rm -rf /io/Setup /io/build/
     PYBIN="/opt/python/${PYVER}/bin"
     PYTHON="/opt/python/${PYVER}/bin/python"
 	if [ ! -f ${PYBIN}/python ]; then
 	    PYTHON="/opt/python/${PYVER}/bin/pypy"
 	fi
 
-    ${PYTHON} -m pip wheel --global-option="build_ext" --global-option="-j4" -vvv /ws/ -w wheelhouse/
+    ${PYTHON} -m pip wheel --global-option="build_ext" --global-option="-j4" -vvv /io/ -w wheelhouse/
 done
 
 # Bundle external shared libraries into the wheels
 for whl in wheelhouse/*.whl; do
-    auditwheel repair $whl -w /ws/buildconfig/manylinux-build/wheelhouse/
+    auditwheel repair $whl -w /io/buildconfig/manylinux-build/wheelhouse/
 done
 
 # Dummy options for headless testing
@@ -54,6 +54,6 @@ for PYVER in $SUPPORTED_PYTHONS; do
 	    PYTHON="/opt/python/${PYVER}/bin/pypy"
 	fi
 
-    ${PYTHON} -m pip install pygame --no-index -f /ws/buildconfig/manylinux-build/wheelhouse
+    ${PYTHON} -m pip install pygame --no-index -f /io/buildconfig/manylinux-build/wheelhouse
     (cd $HOME; ${PYTHON} -m pygame.tests --exclude opengl,music,timing)
 done
