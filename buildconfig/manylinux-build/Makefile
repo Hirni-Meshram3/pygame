@@ -4,7 +4,7 @@ wheels-manylinux-x64:
 	docker run --rm -v ${REPO_ROOT}:/io pygame/manylinux1_base_x86_64 /io/buildconfig/manylinux-build/build-wheels.sh
 
 wheels-manylinux-aarch64:
-	docker run --rm -v ${REPO_ROOT}:/io pygame/manylinux2014_aarch64 /io/buildconfig/manylinux-build/build-wheels.sh
+	sudo docker run --rm -v ${REPO_ROOT}:/io pygame/manylinux2014_aarch64 /io/buildconfig/manylinux-build/build-wheels.sh
 
 wheels-manylinux-x86:
 	docker run --rm -v ${REPO_ROOT}:/io pygame/manylinux1_base_i686 /io/buildconfig/manylinux-build/build-wheels.sh
@@ -13,7 +13,7 @@ wheels-x64:
 	docker run --rm -v ${REPO_ROOT}:/io pygame/manylinux2010_base_x86_64 /io/buildconfig/manylinux-build/build-wheels.sh buildpypy
 
 wheels-aarch64:
-	docker run --rm -v ${REPO_ROOT}:/io pygame/manylinux2014_aarch64 /io/buildconfig/manylinux-build/build-wheels.sh buildpypy
+	sudo docker run --rm -v ${REPO_ROOT}:/io pygame/manylinux2014_aarch64 /io/buildconfig/manylinux-build/build-wheels.sh buildpypy
 
 wheels-x86:
 	docker run --rm -v ${REPO_ROOT}:/io pygame/manylinux2010_base_i686 /io/buildconfig/manylinux-build/build-wheels.sh buildpypy
@@ -28,7 +28,7 @@ base-image-manylinux-x64:
 	docker build --build-arg BASE_IMAGE=manylinux1_x86_64 --build-arg BASE_IMAGE2=manylinux1_x86_64 -t pygame/manylinux1_base_x86_64 -f docker_base/Dockerfile-x86_64 docker_base
 
 base-image-manylinux-aarch64:
-	docker build --build-arg BASE_IMAGE=manylinux2014_aarch64 --build-arg BASE_IMAGE2=manylinux2014_aarch64 -t pygame/manylinux2014_aarch64 -f docker_base/Dockerfile-aarch64 docker_base
+	sudo docker build --build-arg BASE_IMAGE=manylinux2014_aarch64 --build-arg BASE_IMAGE2=manylinux2014_aarch64 -t pygame/manylinux2014_aarch64 -f docker_base/Dockerfile-aarch64 docker_base
 
 base-image-manylinux-x86:
 	docker build --build-arg BASE_IMAGE=manylinux1_i686 --build-arg BASE_IMAGE2=manylinux1_i686 -t pygame/manylinux1_base_i686 -f docker_base/Dockerfile-i686 docker_base
@@ -41,7 +41,7 @@ base-image-x64:
 	docker build -t pygame/manylinux2010_base_x86_64 -f docker_base/Dockerfile-x86_64 docker_base --build-arg BASE_IMAGE=manylinux2010_x86_64 --build-arg BASE_IMAGE2=manylinux2010_x86_64
 
 base-image-aarch64:
-	docker build -t pygame/manylinux2014_aarch64 -f docker_base/Dockerfile-aarch64 docker_base --build-arg BASE_IMAGE=manylinux2014_aarch64 --build-arg BASE_IMAGE2=manylinux2014_aarch64
+	sudo docker build -t pygame/manylinux2014_aarch64 -f docker_base/Dockerfile-aarch64 docker_base --build-arg BASE_IMAGE=manylinux2014_aarch64 --build-arg BASE_IMAGE2=manylinux2014_aarch64
 
 base-image-x86:
 	docker build -t pygame/manylinux2010_base_i686 -f docker_base/Dockerfile-i686 docker_base --build-arg BASE_IMAGE=manylinux2010_i686 --build-arg BASE_IMAGE2=manylinux2010_i686
@@ -55,7 +55,7 @@ push-manylinux-x64:
 	docker push pygame/manylinux1_base_x86_64
 
 push-manylinux-aarch64:
-	docker push pygame/manylinux2014_aarch64
+	sudo docker push pygame/manylinux2014_aarch64
 
 push-manylinux-x86:
 	docker push pygame/manylinux1_base_i686
@@ -67,7 +67,7 @@ push-x64:
 	docker push pygame/manylinux2010_base_x86_64
 
 push-aarch64:
-	docker push pygame/manylinux2014_aarch64
+	sudo docker push pygame/manylinux2014_aarch64
 
 push-x86:
 	docker push pygame/manylinux2010_base_i686
@@ -81,7 +81,7 @@ pull-manylinux-x64:
 	docker pull pygame/manylinux1_base_x86_64
 
 pull-manylinux-aarch64:
-	docker pull pygame/manylinux2014_aarch64
+	sudo docker pull pygame/manylinux2014_aarch64
 
 pull-manylinux-x86:
 	docker pull pygame/manylinux1_base_i686
@@ -92,7 +92,7 @@ pull-x64:
 	docker pull pygame/manylinux2010_base_x86_64
 
 pull-aarch64:
-	docker pull pygame/manylinux2014_aarch64
+	sudo docker pull pygame/manylinux2014_aarch64
 
 pull-x86:
 	docker pull pygame/manylinux2010_base_i686
