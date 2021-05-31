@@ -81,7 +81,7 @@ pull-manylinux-x64:
 	docker pull pygame/manylinux1_base_x86_64
 
 pull-manylinux-aarch64:
-	sudo docker pull pygame/manylinux2014_aarch64
+	docker pull quay.io/pypa/manylinux2014_aarch64
 
 pull-manylinux-x86:
 	docker pull pygame/manylinux1_base_i686
