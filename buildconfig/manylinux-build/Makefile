@@ -12,14 +12,11 @@ wheels-manylinux-x86:
 wheels-x64:
 	docker run --rm -v ${REPO_ROOT}:/io pygame/manylinux2010_base_x86_64 /io/buildconfig/manylinux-build/build-wheels.sh buildpypy
 
-wheels-aarch64:
-	docker run --rm -v ${REPO_ROOT}:/io pygame/manylinux2014_aarch64 /io/buildconfig/manylinux-build/build-wheels.sh buildpypy
-
 wheels-x86:
 	docker run --rm -v ${REPO_ROOT}:/io pygame/manylinux2010_base_i686 /io/buildconfig/manylinux-build/build-wheels.sh buildpypy
 
 
-wheels: wheels-x64 wheels-aarch64 wheels-x86
+wheels: wheels-x64 wheels-x86
 wheels-manylinux: wheels-manylinux-x64 wheels-manylinux-aarch64 wheels-manylinux-x86
 
 
