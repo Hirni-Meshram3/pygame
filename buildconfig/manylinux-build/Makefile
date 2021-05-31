@@ -92,7 +92,7 @@ pull-x64:
 	docker pull pygame/manylinux2010_base_x86_64
 
 pull-aarch64:
-	sudo docker pull pygame/manylinux2014_aarch64
+	docker pull quay.io/pypa/manylinux2014_aarch64
 
 pull-x86:
 	docker pull pygame/manylinux2010_base_i686
