@@ -10,7 +10,7 @@ wheels-x64:
 	docker run --rm -v ${REPO_ROOT}:/io pygame/manylinux2010_base_x86_64 /io/buildconfig/manylinux-build/build-wheels.sh buildpypy
 
 wheels-aarch64:
-	docker run --rm -v ${REPO_ROOT}:/io pygame/manylinux2014_aarch64 /io/buildconfig/manylinux-build/build-wheels.sh
+	docker run --rm -v ${REPO_ROOT}:/io pygame/manylinux2014_base_aarch64 /io/buildconfig/manylinux-build/build-wheels.sh
 
 wheels-x86:
 	docker run --rm -v ${REPO_ROOT}:/io pygame/manylinux2010_base_i686 /io/buildconfig/manylinux-build/build-wheels.sh buildpypy
@@ -58,7 +58,7 @@ push-x64:
 	docker push pygame/manylinux2010_base_x86_64
 
 push-aarch64:
-	docker push pygame/manylinux2014_aarch64
+	docker push pygame/manylinux2014_base_aarch64
 
 push-x86:
 	docker push pygame/manylinux2010_base_i686
@@ -79,7 +79,7 @@ pull-x64:
 	docker pull pygame/manylinux2010_base_x86_64
 
 pull-aarch64:
-	docker pull pygame/manylinux2014_aarch64
+	docker pull pygame/manylinux2014_base_aarch64
 
 pull-x86:
 	docker pull pygame/manylinux2010_base_i686
