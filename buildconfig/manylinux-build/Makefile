@@ -78,10 +78,10 @@ pull-manylinux: pull-manylinux-x64 pull-manylinux-x86
 pull-x64:
 	docker pull pygame/manylinux2010_base_x86_64
 
-pull-aarch64:
-	docker pull pygame/manylinux2014_base_aarch64
+#pull-aarch64:
+#	docker pull pygame/manylinux2014_base_aarch64
 
 pull-x86:
 	docker pull pygame/manylinux2010_base_i686
 
-pull: pull-x64 pull-aarch64 pull-x86
+pull: pull-x64 pull-x86
